@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+</head>
+<style>
+#h1{
+    text-align: center;
+    font-size: 50px;
+    background-color: aqua;
+}
+#div1{
+    text-align: center;
+}
+#btn1{
+    background-color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;   
+}
+#btn2{
+    background-color: silver;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;   
+}
+#btn3{
+    background-color: green;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;   
+}
+#p1{
+    text-align: center;
+    color: rgb(6, 60, 72);
+    font-size: 30px;
+}
+</style>
+<body>
+    <h1 id="h1">Counter</h1>
+    <p id="p1">0</p>
+    <div id="div1">
+    <button id="btn1">min</button>
+    <button id="btn2">Reset</button>
+    <button id="btn3">max</button>
+    <p class="showtime">
+        current time is <span id="time"></span>
+    </p>
+   
+</div>
+<script>
+const p1= document.getElementById('p1');
+let numb = 0;
+const btn1 = document.getElementById('btn1');
+const btn2 = document.getElementById('btn2');
+const btn3 = document.getElementById('btn3');
+
+btn1.addEventListener('click', () => {
+    numb--;
+    p1.textContent= numb;
+});
+btn3.addEventListener('click', () => {
+    numb++;
+    p1.textContent= numb;
+});
+btn2.addEventListener('click', () => {
+    numb=0;
+    p1.textContent= numb;
+});
+setInterval(updatetime, 1000);
+    
+    function updatetime(){
+    time.innerHTML = new Date();
+    }
+</script>
+
+</body>
+</html>
